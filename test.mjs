@@ -2,8 +2,8 @@
     node
 */
 
-const assert = require("assert");
-const makeGreeting = require("./index");
+import assert from "assert";
+import {makeGreeting} from "./index";
 
 // Tests strict equality between the actual and expected parameters as determined by the SameValue Comparison.
 
