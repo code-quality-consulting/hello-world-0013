@@ -1,14 +1,10 @@
 /*jslint
     node
 */
-module.exports = function makeGreeting(name, language) {
-    "use strict";
+module.exports = function makeGreeting(name = "world", language = "English") {
     if (language === "Spanish") {
         return "¡Hola mundo!";
     }
-    if (name) {
-        return "Hello " + name + "!";
-    }
-    return "Hello world!";
+    return "Hello " + name + "!";
 };
 
