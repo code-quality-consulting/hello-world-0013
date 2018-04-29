@@ -3,7 +3,7 @@
 */
 
 import assert from "assert";
-import {makeGreeting, makeGreeter} from "./index";
+import {makeGreeter} from "./index";
 
 // Tests strict equality between the actual and expected parameters as determined by the SameValue Comparison.
 
@@ -11,7 +11,7 @@ import {makeGreeting, makeGreeter} from "./index";
 const englishGreeting = makeGreeter("English");
 const spanishGreeting = makeGreeter("Spanish");
 assert.strictEqual(englishGreeting(), "Hello world!");
-assert.strictEqual(makeGreeting("Zach"), "Hello Zach!");
+assert.strictEqual(englishGreeting("Zach"), "Hello Zach!");
 assert.strictEqual(spanishGreeting(), "¡Hola mundo!");
-assert.strictEqual(makeGreeting("Alejandro", "Spanish"), "¡Hola Alejandro!");
+assert.strictEqual(spanishGreeting("Alejandro"), "¡Hola Alejandro!");
 console.log("Your test has passed!");

@@ -13,13 +13,13 @@ export function makeGreeting(name = "world", language = "English") {
 
 export function makeGreeter(language = "English") {
     if (language === "Spanish") {
-        return function () {
-            return "¡Hola mundo!";
+        return function (name = "mundo") {
+            return "¡Hola " + name + "!";
         };
     }
     if (language === "English") {
-        return function () {
-            return "Hello world!";
+        return function (name = "world") {
+            return "Hello " + name + "!";
         };
     }
 }
