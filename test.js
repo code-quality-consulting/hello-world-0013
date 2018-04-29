@@ -8,9 +8,13 @@ const assert = require("assert");
 
 // If the values are not strictly equal, an AssertionError is thrown with a message property set equal to the value of the message parameter. If the message parameter is undefined, a default error message is assigned. If the message parameter is an instance of an Error then it will be thrown instead of the AssertionError.
 
-function makeGreeting() {
+function makeGreeting(name) {
     "use strict";
+    if (name) {
+        return "Hello " + name + "!";
+    }
     return "Hello world!";
 }
 assert.strictEqual(makeGreeting(), "Hello world!");
+assert.strictEqual(makeGreeting("Zach"), "Hello Zach!");
 console.log("Your test has passed!");
