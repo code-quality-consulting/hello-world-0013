@@ -11,3 +11,10 @@ export function makeGreeting(name = "world", language = "English") {
     return "Hello " + name + "!";
 }
 
+export function makeGreeter(language = "English") {
+    if (language === "English") {
+        return function () {
+            return "Hello world!";
+        };
+    }
+}
