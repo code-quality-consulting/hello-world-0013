@@ -1,20 +1,21 @@
 /*jslint
     node
 */
-export function makeGreeting(name = "world", language = "English") {
-    if (language === "Spanish") {
-        if (name !== "") {
-            return "¡Hola " + name + "!";
-        }
-        return "¡Hola mundo!";
-    }
-    return "Hello " + name + "!";
-}
+
+const hello = {
+    "English": "Hello",
+    "Spanish": "¡Hola",
+    "German": "Hallo"
+};
+
+const world = {
+    "English": "world",
+    "Spanish": "mundo",
+    "German": "Welt"
+};
 
 export function makeGreeter(language = "English") {
-    if (language === "English") {
-        return function () {
-            return "Hello world!";
-        };
-    }
+    return function (name = world[language]) {
+        return hello[language] + " " + name + "!";
+    };
 }

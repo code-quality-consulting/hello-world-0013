@@ -3,14 +3,18 @@
 */
 
 import assert from "assert";
-import {makeGreeting, makeGreeter} from "./index";
+import {makeGreeter} from "./index";
 
-// Tests strict equality between the actual and expected parameters as determined by the SameValue Comparison.
+const greetings = {
+    english: makeGreeter("English"),
+    spanish: makeGreeter("Spanish"),
+    german: makeGreeter("German")
+};
 
-// If the values are not strictly equal, an AssertionError is thrown with a message property set equal to the value of the message parameter. If the message parameter is undefined, a default error message is assigned. If the message parameter is an instance of an Error then it will be thrown instead of the AssertionError.
-const englishGreeting = makeGreeter("English");
-assert.strictEqual(englishGreeting(), "Hello world!");
-assert.strictEqual(makeGreeting("Zach"), "Hello Zach!");
-assert.strictEqual(makeGreeting("", "Spanish"), "¡Hola mundo!");
-assert.strictEqual(makeGreeting("Alejandro", "Spanish"), "¡Hola Alejandro!");
+assert.strictEqual(greetings.english(), "Hello world!");
+assert.strictEqual(greetings.english("Zach"), "Hello Zach!");
+assert.strictEqual(greetings.spanish(), "¡Hola mundo!");
+assert.strictEqual(greetings.spanish("Alejandro"), "¡Hola Alejandro!");
+assert.strictEqual(greetings.german(), "Hallo Welt!");
+assert.strictEqual(greetings.german("Gunter"), "Hallo Gunter!");
 console.log("Your test has passed!");
