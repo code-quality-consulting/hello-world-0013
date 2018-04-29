@@ -2,8 +2,8 @@
     node
 */
 
-const assert = require("assert");
-const makeGreeting = require("./index");
+import assert from "assert";
+import {makeGreeting} from "./index";
 
 // Tests strict equality between the actual and expected parameters as determined by the SameValue Comparison.
 
@@ -12,4 +12,5 @@ const makeGreeting = require("./index");
 assert.strictEqual(makeGreeting(), "Hello world!");
 assert.strictEqual(makeGreeting("Zach"), "Hello Zach!");
 assert.strictEqual(makeGreeting("", "Spanish"), "¡Hola mundo!");
+assert.strictEqual(makeGreeting("Alejandro", "Spanish"), "¡Hola Alejandro!");
 console.log("Your test has passed!");
