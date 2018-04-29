@@ -5,13 +5,15 @@
 const hello = {
     "English": "Hello",
     "Spanish": "¡Hola",
-    "German": "Hallo"
+    "German": "Hallo",
+    "Russian": "Привет"
 };
 
 const world = {
     "English": "world",
     "Spanish": "mundo",
-    "German": "Welt"
+    "German": "Welt",
+    "Russian": "мир"
 };
 
 export function makeGreeter(language = "English") {
