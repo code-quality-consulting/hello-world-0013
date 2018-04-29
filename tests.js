@@ -12,4 +12,5 @@ const makeGreeting = require("./index");
 assert.strictEqual(makeGreeting(), "Hello world!");
 assert.strictEqual(makeGreeting("Zach"), "Hello Zach!");
 assert.strictEqual(makeGreeting("", "Spanish"), "¡Hola mundo!");
+assert.strictEqual(makeGreeting("Alejandro", "Spanish"), "¡Hola Alejandro!");
 console.log("Your test has passed!");
